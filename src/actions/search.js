@@ -8,6 +8,7 @@ var handleVideoSearch = (q) => {
   //TODO:  Write an asynchronous action to handle a video search!
 
   var func = function(q) {
+    // console.log("using key to search: ", YOUTUBE_API_KEY);
     searchYouTube({YOUTUBE_API_KEY, q}, changeVideoList);
   };
 

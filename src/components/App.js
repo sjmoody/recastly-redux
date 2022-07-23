@@ -9,12 +9,6 @@ import VideoListContainer from '../containers/VideoListContainer.js';
 class App extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      videos: [],
-      currentVideo: null
-    };
-
     this.getYouTubeVideos = this.getYouTubeVideos.bind(this);
   }
 
@@ -27,6 +21,7 @@ class App extends React.Component {
   }
 
   getYouTubeVideos(query) {
+    console.log(this.props.API_KEY);
     var options = {
       key: this.props.API_KEY,
       query: query
@@ -40,22 +35,20 @@ class App extends React.Component {
     );
   }
 
-  //TODO: swap out the React components below for the container components
-  //  you wrote in the 'containers' directory.
   render() {
     return (
       <div>
         <nav className="navbar">
           <div className="col-md-6 col-md-offset-3">
-            <SearchContainer />
+            <SearchContainer/>
           </div>
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <VideoPlayerContainer />
+            <VideoPlayerContainer/>
           </div>
           <div className="col-md-5">
-            <VideoListContainer />
+            <VideoListContainer/>
           </div>
         </div>
       </div>
